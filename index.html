@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Contract</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <script src="./script.js"></script>
+  <div class="drop" id="start">
+    <h1 class="center">Hello please tell me what is your name😈</h1>
+    <input type="text" id="userName" name="userName">
+    <input class="leagueButton" type="button" value="Start a game😏" onclick="getUsername(),clearBox()">
+    <a href="https://www.leagueoflegends.com/pl-pl/" target="blink"><input class="leagueButton" type="button" value="Click to sell your soul😇"></a>
+  </div>
+  <div id="gameArea">
+    <h1>Welcome <span id="showName">username</span> in Rioter dilema</h1>
+
+    <div>
+      <h4> Who first take 5 reports get ban and win</h4>
+      <h5> <span class="red">Troll</span> beats <span class="blue">Toxic </span>| <span class="blue">Toxic</span> beats <span class="yellow">Smurf</span> | <span class="yellow">Smurf</span> beats <span class="red">Troll</span></h5>
+    </div>
+
+    <div class="scoreboard">
+      Your reports: <span id="userPoints">0</span> | Computer reports: <span id="computerPoints">0</span>
+    </div>
+    <br>
+    <div class="roles">
+      <div class="playerRole">Select your role</div>
+      <div class="space"> </div>
+      <div clas="computerRole">Computer role</div>
+    </div>
+
+    <div class="gameBox">
+      <div class="player">
+        <input class=icon type="button" id="troll" onclick="trollButton()">
+        <input class=icon type="button" id="toxic" onclick="toxicButton()">
+        <input class=icon type="button" id="smurf" onclick="smurfButton()">
+      </div>
+      <div class="vs">
+        <img class="vs" src="images/vs.png">
+      </div>
+      <div class="computer">
+        <div id="questionCard"> </div>
+      </div>
+    </div>
+
+    <div id="win">
+      Congrats you won this round
+    </div>
+
+    <div id="draw">
+      Ok it's draw round
+    </div>
+
+    <div id="loose">
+      You lost this round :(
+    </div>
+
+  </div>
+</body>
+</html>

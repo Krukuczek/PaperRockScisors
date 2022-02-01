@@ -1,0 +1,132 @@
+body{
+    background-color: #111;
+    max-height: 100%;
+}
+#start{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:10px;
+}
+h1{
+    color: #c28f2c;
+    font-family: "Beaufort for LOL", serif;
+    font-size: xx-larger;
+}
+.center{
+    margin-top: 200px;
+}
+
+.drop {
+    animation: dropIn 1s ease forwards;
+}
+@keyframes dropIn{
+    from {transform: translateY(-500px);}
+    to { transform: translateY(0px);}
+}
+input[type="text" i] {
+    padding: 1px 2px;
+    background: #38383896;
+    border:none;
+    width: 300px;
+    height: 25px;
+    border-radius: 25px;
+    text-align: center;
+    color:white;
+}
+#gameArea{
+    color:white;
+    position:absolute;
+    transform: translateY(-500px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-width: 98%;
+    margin:0px;
+    text-align: center;
+}
+.leagueButton {
+    background-color: #0bc6e3;
+    font-size: 0.625rem;
+    letter-spacing: 0.15em;
+    font-size: 10px;
+    font-weight: 500;
+    text-align: center;
+    padding:10px 50px;
+    color:white;
+    border:none;
+    cursor:pointer;
+    clip-path: polygon(6% 0, 100% 0, 100% 70%, 94% 100%, 0 100%, 0 30%);
+}
+input.leagueButton:hover{
+    clip-path: none;
+}
+.red {
+    color:rgb(220, 81, 81);
+}
+.blue {
+    color:rgb(78, 78, 223);
+}
+.yellow {
+    color:rgb(233, 215, 81);
+}
+#win,#loose,#draw{
+    display: none;
+}
+.gameBox{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+.gameBox input{
+    background: #6666668f;
+    border:none;
+    cursor:pointer;
+    height: 200px;
+    width: 125px;
+}
+#troll{
+    background-image: url(./images/troll.png);
+}
+#toxic{
+    background-image: url(./images/toxic.png);
+}
+#smurf{
+    background-image: url(./images/smurf.png);
+}
+#troll:hover{
+    background-color: rgb(220, 81, 81);
+}
+#toxic:hover{
+    background-color:rgb(78, 78, 223);
+}
+#smurf:hover{
+    background-color: rgb(233, 215, 81);
+}
+.questionCard{
+    background-color: #6666668f;
+}
+.roles{
+    display: flex;
+    align-items: center;
+}
+.playerRole{
+    width: 380px;
+}
+.space{
+    width: 255px;
+}
+.computerRole{
+    width: 125px;
+}
+#questionCard{
+    width: 125px;
+    height: 200px;
+    background-color:#6666668f;;
+    background-image: url(images/question.png);
+}
+#questionCard:hover{
+    background-color:#666;
+}
