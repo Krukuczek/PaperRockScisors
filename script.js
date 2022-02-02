@@ -128,12 +128,16 @@ function checkWin(playerScore,computerScore) {
         gameArea.style.display="none";
         let nice=document.getElementById("winGame");
         nice.style.display="flex";
+        playerScore=0;
+        computerScore=0;
         showScoreboard(playerScore,computerScore);
     }else if(computerScore==5){
         const gameArea=document.getElementById("gameArea");
         gameArea.style.display="none";
         let nice=document.getElementById("looseGame");
         nice.style.display="flex";
+        playerScore=0;
+        computerScore=0;
         showScoreboard(playerScore,computerScore);
     }
 }
@@ -147,6 +151,10 @@ function playAgain(){
     let niceWin=document.getElementById("winGame");
     niceWin.style.display="none";
     changeScore=1;
+    playerScore=0;
+    computerScore=0;
+    cleanResult();
+    showScoreboard(playerScore,computerScore);
     return changeScore;
 }
 let playerScore=0;let computerScore=0; let changeScore=0;
