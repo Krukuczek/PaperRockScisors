@@ -60,6 +60,7 @@ function smurfButton(userScore){
     computerCard.style.backgroundColor=colorSelection(computerSelection);
     addPoints(result);
     showScoreboard(playerScore,computerScore);
+    checkWin(playerScore,computerScore);
     return userScore;
 }
 function toxicButton(userScore){
@@ -74,6 +75,7 @@ function toxicButton(userScore){
     computerCard.style.backgroundColor=colorSelection(computerSelection);
     addPoints(result);
     showScoreboard(playerScore,computerScore);
+    checkWin(playerScore,computerScore);
     return userScore;
 }
 function trollButton(){
@@ -88,6 +90,7 @@ function trollButton(){
     computerCard.style.backgroundColor=colorSelection(computerSelection);
     addPoints(result);
     showScoreboard(playerScore,computerScore);
+    checkWin(playerScore,computerScore);
     return playerScore,computerScore;
 }
 function colorSelection(computerSelection){
@@ -102,16 +105,48 @@ function colorSelection(computerSelection){
     return color;
 }
 function addPoints(result) {
+    if(changeScore==1){
+        playerScore=0;
+        computerScore=0;
+        changeScore=0;
+    }
     if(result=="win"){
         playerScore++;
     }else if(result=="loose"){
         computerScore++;
     }
     console.log(playerScore,computerScore);
-    return playerScore,computerScore;
+    return playerScore,computerScore,changeScore;
 }
 function showScoreboard(playerScore,computerScore) {
     document.getElementById("userPoints").innerHTML=playerScore;
     document.getElementById("computerPoints").innerHTML=computerScore;
 }
-let playerScore=0;let computerScore=0;
+function checkWin(playerScore,computerScore) {
+    if(playerScore==5){
+        let gameArea=document.getElementById("gameArea");
+        gameArea.style.display="none";
+        let nice=document.getElementById("winGame");
+        nice.style.display="flex";
+        showScoreboard(playerScore,computerScore);
+    }else if(computerScore==5){
+        const gameArea=document.getElementById("gameArea");
+        gameArea.style.display="none";
+        let nice=document.getElementById("looseGame");
+        nice.style.display="flex";
+        showScoreboard(playerScore,computerScore);
+    }
+}
+function playAgain(){
+    const gameArea=document.getElementById("gameArea");
+    gameArea.style.display="flex";
+    gameArea.style.transform="translateY(0px)";
+    gameArea.classList.add("drop");
+    let niceLoose=document.getElementById("looseGame");
+    niceLoose.style.display="none";
+    let niceWin=document.getElementById("winGame");
+    niceWin.style.display="none";
+    changeScore=1;
+    return changeScore;
+}
+let playerScore=0;let computerScore=0; let changeScore=0;

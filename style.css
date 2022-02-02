@@ -130,3 +130,16 @@ input.leagueButton:hover{
 #questionCard:hover{
     background-color:#666;
 }
+.end {
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    color: #c28f2c;
+    font-family: "Beaufort for LOL", serif;
+    font-size: xx-larger;
+    min-width: 98%;
+    min-height: 98%;
+    flex-direction: column;
+}
