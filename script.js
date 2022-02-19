@@ -48,10 +48,9 @@ function cleanResult(){
     const draw=document.getElementById("draw");
     draw.style.display="none";
 }
-function smurfButton(userScore){
+function startButton(userSelection,userScore){
     cleanResult();
     let computerSelection=computerPlay();
-    let userSelection="smurf";
     let result=oneRound(userSelection,computerSelection);
     let resultDiv=document.getElementById(result);
     resultDiv.style.display="flex";
@@ -62,36 +61,6 @@ function smurfButton(userScore){
     showScoreboard(playerScore,computerScore);
     checkWin(playerScore,computerScore);
     return userScore;
-}
-function toxicButton(userScore){
-    cleanResult();
-    let computerSelection=computerPlay();
-    let userSelection="toxic";
-    let result=oneRound(userSelection,computerSelection);
-    let resultDiv=document.getElementById(result);
-    resultDiv.style.display="flex";
-    let computerCard=document.getElementById("questionCard");
-    computerCard.style.backgroundImage="url(./images/"+computerSelection+".png)";
-    computerCard.style.backgroundColor=colorSelection(computerSelection);
-    addPoints(result);
-    showScoreboard(playerScore,computerScore);
-    checkWin(playerScore,computerScore);
-    return userScore;
-}
-function trollButton(){
-    cleanResult();
-    let computerSelection=computerPlay();
-    let userSelection="troll";
-    let result=oneRound(userSelection,computerSelection);
-    let resultDiv=document.getElementById(result);
-    resultDiv.style.display="flex";
-    let computerCard=document.getElementById("questionCard");
-    computerCard.style.backgroundImage="url(./images/"+computerSelection+".png)";
-    computerCard.style.backgroundColor=colorSelection(computerSelection);
-    addPoints(result);
-    showScoreboard(playerScore,computerScore);
-    checkWin(playerScore,computerScore);
-    return playerScore,computerScore;
 }
 function colorSelection(computerSelection){
     let color;
